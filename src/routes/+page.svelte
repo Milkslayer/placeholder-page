@@ -121,6 +121,14 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Something beautiful is coming this way</title>
+	<meta
+		name="description"
+		content="When was the last time you took a deep breath and let go of the weight on you shoulders? Now is the time..."
+	/>
+</svelte:head>
+
 <div class="relative flex h-dvh flex-col items-center justify-center overflow-hidden">
 	<div class="-z-30 hidden md:block">
 		<img
