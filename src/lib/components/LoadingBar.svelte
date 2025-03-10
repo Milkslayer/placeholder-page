@@ -6,16 +6,18 @@
 
 	let { value, class: className }: Props = $props();
 
-	const getValue = () => {
-		if (!value) return 0;
-		if (value < 0) return 0;
-		if (value > 100) return 100;
-		return value;
-	};
+	let displayValue = $state(0);
+
+	$effect(() => {
+		if (!value) displayValue = 0;
+		else if (value <= 0) displayValue = 0;
+		else if (value > 100) displayValue = 100;
+		else displayValue = value;
+	});
 </script>
 
 <div
-	class="animate__animatedd animate__fadeIn animate__delay-5s h-2 rounded-2xl border border-stone-400 bg-white"
+	class={`animate__animated animate__fadeIn h-2 rounded-2xl border border-stone-400 bg-white ${className ? className : ''}`}
 >
-	<div class={`h-full bg-slate-600 ${className ? className : ''}`} style={`width: ${value}%`}></div>
+	<div class="h-full bg-slate-600" style={`width: ${displayValue}%`}></div>
 </div>
