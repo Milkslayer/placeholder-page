@@ -26,7 +26,7 @@
 	const fill = async (header: HTMLElement, text: string) => {
 		for (let i = 0; i < text.length; i++) {
 			header.innerHTML += text.charAt(i);
-			await sleep(50);
+			await sleep(typingSpeed);
 		}
 	};
 
